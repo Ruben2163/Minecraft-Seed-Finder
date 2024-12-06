@@ -12,8 +12,8 @@ start = time.time()
 
 # Constants
 IMG_SIZE = (256, 256)
-BATCH_SIZE = 200
-EPOCHS = 10
+BATCH_SIZE = 100
+EPOCHS = 100
 
 # Custom Data Generator for Regression
 class RegressionDataGenerator(Sequence):
