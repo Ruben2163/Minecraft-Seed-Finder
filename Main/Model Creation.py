@@ -7,11 +7,13 @@ from tensorflow.keras.utils import Sequence
 from sklearn.model_selection import train_test_split
 import cv2
 import matplotlib.pyplot as plt
+import time
+start = time.time()
 
 # Constants
-IMG_SIZE = (512, 512)
+IMG_SIZE = (256, 256)
 BATCH_SIZE = 200
-EPOCHS = 100
+EPOCHS = 1
 
 # Custom Data Generator for Regression
 class RegressionDataGenerator(Sequence):
@@ -105,6 +107,8 @@ history = model.fit(
 os.makedirs('models', exist_ok=True)
 model.save('models/Minecraft-Seed-Finder_2.h5')
 
+end = time.time()
+print(end-start)
 # Plot Loss
 plt.figure()
 plt.plot(history.history['loss'], label='Train Loss')
